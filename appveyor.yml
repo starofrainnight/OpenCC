@@ -35,6 +35,10 @@ artifacts:
     name: OpenCC
     type: zip
 
+  - path: "C:/Program Files (x86)/opencc"
+    name: OpenCC-Full
+    type: zip
+
 # to run your custom scripts instead of provider deployments
 deploy_script:
   - npm run deploy
