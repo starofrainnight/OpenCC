@@ -31,7 +31,7 @@ artifacts:
     name: OpenCC
     type: zip
 
-  - path: "C:/Program Files (x86)/opencc"
+  - path: build/
     name: OpenCC-Full
     type: zip
 
