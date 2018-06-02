@@ -18,17 +18,17 @@ install:
   - npm -g i npm@latest
   # install modules
   - appveyor-retry call npm install --build-from-source
-  # Build dist
-  - mkdir dist
-  - copy .\\build\\Release\\*.json dist\\
-  - copy .\\build\\Release\\*.ocd dist\\
-  - copy .\\build\\src\\tools\\Release\\*.* dist\\
 
 # to run your custom scripts instead of automatic tests
 test_script:
   - IF %nodejs_version%==stable cmake -H. -Bbuild -G"Visual Studio 12"
   - IF %nodejs_version%==stable cmake --build build --config Release --target install
   - npm test
+  # Build dist
+  - mkdir dist
+  - copy .\\build\\Release\\*.json dist\\
+  - copy .\\build\\Release\\*.ocd dist\\
+  - copy .\\build\\src\\tools\\Release\\*.* dist\\
 
 # pushing entire folder as a zip archive
 artifacts:
